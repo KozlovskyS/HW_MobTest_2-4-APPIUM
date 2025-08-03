@@ -55,7 +55,7 @@ public class ChangeTextTest_Appium {
         MobilePage mainPage = new MobilePage(driver);
 
         String expected = mainPage.textChanged.getText();
-        mainPage.inputField.sendKeys(" ");
+        mainPage.inputField.sendKeys(textToSetEmpty);
         mainPage.buttonChange.click();
 
         String result = mainPage.textChanged.getText();
@@ -66,11 +66,11 @@ public class ChangeTextTest_Appium {
     public void TestTextOpenInNewActivity() {
         MobilePage mainPage = new MobilePage(driver);
 
-        mainPage.inputField.sendKeys("New Activity");
+        mainPage.inputField.sendKeys(textToNewActivity);
         mainPage.buttonActivity.click();
 
         String result = mainPage.activityText.getText();
-        assertEquals("New Activity", result);
+        assertEquals(textToNewActivity, result);
         driver.navigate().back();
     }
 
